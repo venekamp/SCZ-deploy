@@ -22,6 +22,9 @@ meta.vm.scz-vm.net ansible_host=172.20.1.23
 [vm-client]
 client.vm.scz-vm.net ansible_host=172.20.1.25
 
+[vm-demo]
+demo.vm.scz-vm.net ansible_host=172.20.1.26
+
 [vm:children]
 vm-lb
 vm-proxy
@@ -29,6 +32,7 @@ vm-comanage
 vm-ldap
 vm-meta
 vm-client
+vm-demo
 
 ##########################################
 # role-based groups
@@ -49,6 +53,9 @@ vm-meta
 
 [client:children]
 vm-client
+
+[demo:children]
+vm-demo
 
 ##########################################
 # all
