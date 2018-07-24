@@ -50,7 +50,7 @@ To get started, do the following:
     - virtualbox: `apt install virtualbox`
     - virtualbox (openSUSE Tumbleweed): `zypper install virtualbox`
     - libvirt and qemu: `apt install libvirt-daemon-system virt-manager
-     gir1.2-spice-client-gtk-3.0 qemu qemu-kvm`
+      gir1.2-spice-client-gtk-3.0 qemu qemu-kvm`
     - docker (openSUSE Tumbleweed): `sudo zypper install docker docker-compose` and
       if you want the docker deamon to start automatically: `sudo systemctl enable docker`
       If you are on a btrfs system and using snapshots (snapper for example),
@@ -65,9 +65,11 @@ To get started, do the following:
     172.20.1.22 proxy.vm.scz-vm.net
     172.20.1.23 meta.vm.scz-vm.net
     172.20.1.25 client.vm.scz-vm.net
+    172.20.1.26 demo.vm.scz-vm.net
     ```
 - set up the VMs and start the deploy:
-    - libvirt: `vagrant up --provider libvirt --no-provision` 
+    - docker: `vagrant up --provider docker --no-provision`
+    - libvirt: `vagrant up --provider libvirt --no-provision`
     - virtualbox: `vagrant up --provider virtualbox --no-provision`
 
     This will start 6 unprovisioned VMs (each requires 786MB of memory). In order to
