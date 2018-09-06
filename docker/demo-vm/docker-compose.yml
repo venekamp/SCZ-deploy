@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  ssh:
+    image: demo-vm-ssh
+    build: ./ssh
+    ports:
+      - "2222:22"
+    # volumes:
+    networks:
+        - outside
+
+networks:
+  outside:
+    external: false

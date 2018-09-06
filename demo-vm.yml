@@ -1,0 +1,8 @@
+# vim:ts=2:sw=2:expandtab
+---
+
+- hosts: demo
+  tasks:
+    - include_role:
+        name: ldap
+      tags: ['ldap']
