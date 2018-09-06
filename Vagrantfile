@@ -6,6 +6,14 @@
 # libvirt, and there is no way to tell ansible to look for the key in two
 # locations.  So, we just do this by hand...
 require 'vagrant/util/keypair'
+
+unless Vagrant.has_plugin?("vagrant-docker-compose")
+    puts "Vagrant is missing a plugin for docker-compose. Install the dependency first."
+    puts "For Example:"
+    puts "vagrant plugin install vagrant-docker-compose"
+    exit
+end
+
 env = Vagrant::Environment.new()
 sshkeypriv = Pathname.new(env.local_data_path) + 'id_rsa'
 sshkeypub  = Pathname.new(env.local_data_path) + 'id_rsa.pub'
